@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">Event Capturing</h1>
+
+    <div id="grandParent" style="height: 400px;width: 400px;background-color: aqua; margin: auto;margin-top: 100px;">
+        GrandParent
+        <div id="parent" style="height: 300px;width: 300px;background-color: rgb(11, 173, 25);top: 30%;
+        left: 39%; position: absolute;  ">Parent
+
+            <div id="child" style="height: 150px;width: 150px;background-color: rgb(230, 18, 18);top: 25%;
+         left: 25%; position: absolute;  ">Child
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let grandParent = document.getElementById("grandParent");
+        let parent = document.getElementById("parent");
+        let child = document.getElementById("child");
+
+
+        grandParent.addEventListener('click', () => {
+
+            console.log("GrandParent EventListener !!!!!");
+            alert("GrandParent EventListener !!!!!");
+        },true)
+
+        
+        parent.addEventListener('click', () => {
+
+            console.log("Parent EventListener !!!!!");
+            alert("Parent EventListener !!!!!");
+        },true)
+
+
+        child.addEventListener('click', () => {
+
+            console.log("Child EventListener !!!!!");
+            alert("Child EventListener !!!!!");
+        },true)
+
+
+
+    </script>
+
+
+</body>
+
+</html>

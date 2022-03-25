@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manipulation</title>
+</head>
+
+<body id="body"  >
+
+    <ul id="element">
+        <li class="list-item">First Element</li>
+        <li class="list-item">Second Element</li>
+        <li class="list-item">Third Element</li>
+    </ul>
+
+    <table>
+        <tr>
+            <td>One</td>
+            <td>Two</td>
+        </tr>
+        <tr>
+            <td>Three</td>
+            <td>Four</td>
+        </tr>
+    </table>
+
+    <div class="divs">
+       
+       
+    </div>
+    <script>
+
+        const allDivsQ = document.querySelectorAll('.divs')
+        const allDivs = document.getElementsByClassName('divs')
+    </script>
+    
+    <div  class="divs" >   </div>
+
+    <div id="firstDiv"   >First Div</div>
+
+    <script>
+
+        // ID search
+        // element.style.background = "red"
+
+        //getElementById
+        const ulTag = document.getElementById("element");
+        console.log("\ngetElementById :-", ulTag);
+        ulTag.style.backgroundColor = "red";
+
+        //getElementsByClassName
+        listItem = document.getElementsByClassName("list-item");
+        console.log("\ngetElementsByClassName :-", listItem);
+        listItem[1].style.backgroundColor = "yellow";
+
+        //getElementsByTagName
+        console.log('\ngetElementsByTagName("table") :-', document.getElementsByTagName("table"));
+
+
+        //querySelector
+        console.log("\nquerySelector :-");
+        console.log("querySelector('.list-item') :-", document.querySelector('.list-item'));
+
+        console.log("querySelectorAll('.list-item') :-", document.querySelectorAll('.list-item'));
+
+        console.log("querySelector('#element') :-", document.querySelectorAll('#element'));
+
+        const firstChild = document.querySelectorAll('ul > li:first-child');
+        console.log("querySelector('ul > li:first-child') :-", firstChild[0].textContent);
+
+        const lastChild = document.querySelectorAll('ul > li:last-child');
+        console.log("querySelector('ul > li:last-child')  :-", lastChild[0].textContent);
+
+        const nthChild = document.querySelectorAll('ul > li:nth-child(2)');
+        console.log("querySelector('ul > li:first-child') :-", nthChild[0].textContent);
+
+
+
+
+        console.log("querySelector are Static :- ",allDivsQ)
+        console.log("getElementByClassName :- ",allDivs)
+
+         
+        // Creating and Removing the node elements
+        const newDiv = document.createElement('div')
+        newDiv.innerHTML = `<ul id="element" data="valid">
+        <li class="list-item">First element</li>
+        <li class="list-item">Second element</li>
+        <li class="list-item">Third Element</li>
+        </ul>`
+
+        
+        const newText = document.createTextNode('Hello World')
+        newDiv.appendChild(newText)
+        body.append(newDiv)
+        body.prepend(newDiv)
+        body.before(newDiv)
+        body.after(newDiv)
+
+        //firstDiv.replaceWith(newDiv)
+        //firstDiv.remove()
+
+         
+    </script>
+</body>
+
+</html>
